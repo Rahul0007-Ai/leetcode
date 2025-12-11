@@ -1,0 +1,13 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        l1=[]
+        strs.sort()
+        for i in range(len(strs[0])):
+            if strs[0][i]==strs[-1][i]:
+                l1.append(strs[0][i])
+            else:
+                break
+        return("".join(l1))   
+
+link:
+https://leetcode.com/problems/longest-common-prefix/submissions/1852607782
