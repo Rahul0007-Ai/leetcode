@@ -1,0 +1,17 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        pair = {')':'(', ']':'[', '}':'{'}
+
+        for ch in s:
+            if ch in pair.values():
+                stack.append(ch)
+            elif not stack or stack[-1] != pair[ch]:
+                return False
+            else:
+                stack.pop()
+
+        return not stack
+
+link:
+ https://leetcode.com/problems/valid-parentheses/submissions/1852625350
